@@ -9,7 +9,7 @@ import {
 } from '@remix-run/react'
 import styles from './tailwind.css'
 
-export const meta: MetaFunction = () => [{ title: 'New Remix App' }]
+export const meta: MetaFunction = () => [{ title: 'HTTP Client' }]
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
 
