@@ -1,5 +1,6 @@
+import { Button } from "@http-client/components/ui/button"
+import electron from "@http-client/electron.server"
 import { useLoaderData } from "@remix-run/react"
-import electron from "~/electron.server"
 
 export function loader() {
   return {
@@ -13,6 +14,8 @@ export default function Index() {
   return (
     <main>
       <h1>Welcome to Remix</h1>
+      <span className="bg-fuchsia-500 font-bold">Tailwind is working</span>
+      <Button>shadcn/ui Button</Button>
       <p>User data path: {data.userDataPath}</p>
     </main>
   )
