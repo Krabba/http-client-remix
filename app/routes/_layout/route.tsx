@@ -1,6 +1,6 @@
 import { SideNavigation } from '@http-client/routes/_layout/SideNavigation'
 import { Outlet } from '@remix-run/react'
-import requests from './requests.json'
+import requests from '../api.requests.$id.save/requests.json'
 
 export const loader = async () => {
   return {
