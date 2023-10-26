@@ -8,15 +8,15 @@ export function loader() {
   }
 }
 
-export default function Index() {
+export default function HomePage() {
   const data = useLoaderData<typeof loader>()
 
   return (
-    <main>
+    <div>
       <h1>Welcome to Remix</h1>
       <span className='bg-fuchsia-500 font-bold'>Tailwind is working</span>
       <Button>shadcn/ui Button</Button>
       <p>User data path: {data.userDataPath}</p>
-    </main>
+    </div>
   )
 }
