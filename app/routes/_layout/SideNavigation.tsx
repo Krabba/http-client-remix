@@ -1,7 +1,7 @@
 import { Badge } from '@http-client/components/ui/badge'
 import { Button } from '@http-client/components/ui/button'
 import { Input } from '@http-client/components/ui/input'
-import type { Method } from '@http-client/lib/types'
+import type { HttpClientRequest, Method } from '@http-client/lib/types'
 import type { loader as layoutLoader } from '@http-client/routes/_layout/route'
 import { NavLink, useLoaderData } from '@remix-run/react'
 import { PlusCircle } from 'lucide-react'
@@ -10,11 +10,7 @@ const NavItem = ({
   id,
   method,
   title,
-}: {
-  id: string
-  method: Method
-  title: string
-}) => {
+}: Pick<HttpClientRequest, 'id' | 'method' | 'title'>) => {
   return (
     <Button asChild variant='ghost'>
       <NavLink to={`/requests/${id}`} className='flex items-center gap-2'>
