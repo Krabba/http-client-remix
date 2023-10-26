@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^2.1.0",
+    "@remix-run/eslint-config": "^2.1.0",
     "@remix-run/serve": "^2.1.0",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
@@ -40,6 +41,7 @@
     "electron": "^27.0.2",
     "electron-builder": "^24.6.4",
     "electron-devtools-installer": "^3.2.0",
+    "eslint": "^8.52.0",
     "nodemon": "^3.0.1",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",

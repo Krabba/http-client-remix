@@ -1,11 +1,10 @@
 import { Badge } from '@http-client/components/ui/badge'
 import { Button } from '@http-client/components/ui/button'
 import { Input } from '@http-client/components/ui/input'
-import { loader as layoutLoader } from '@http-client/routes/_layout/route'
+import type { Method } from '@http-client/lib/types'
+import type { loader as layoutLoader } from '@http-client/routes/_layout/route'
 import { NavLink, useLoaderData } from '@remix-run/react'
 import { PlusCircle } from 'lucide-react'
-
-type Methods = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'
 
 const NavItem = ({
   id,
@@ -13,7 +12,7 @@ const NavItem = ({
   title,
 }: {
   id: string
-  method: Methods
+  method: Method
   title: string
 }) => {
   return (
@@ -46,7 +45,7 @@ export const SideNavigation = () => {
             <NavItem
               key={request.id}
               id={request.id}
-              method={request.method as Methods}
+              method={request.method as Method}
               title={request.title}
             />
           )
