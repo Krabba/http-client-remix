@@ -4,3 +4,6 @@ build
 public/build
 dist
 .env
+
+# mock
+requests.json
