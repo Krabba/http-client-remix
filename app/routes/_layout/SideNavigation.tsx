@@ -3,7 +3,7 @@ import { Button } from '@http-client/components/ui/button'
 import { Input } from '@http-client/components/ui/input'
 import type { HttpClientRequest, Method } from '@http-client/lib/types'
 import type { loader as layoutLoader } from '@http-client/routes/_layout/route'
-import { NavLink, useLoaderData } from '@remix-run/react'
+import { NavLink, useFetcher, useLoaderData } from '@remix-run/react'
 import { PlusCircle } from 'lucide-react'
 
 const NavItem = ({
@@ -23,17 +23,20 @@ const NavItem = ({
 
 export const SideNavigation = () => {
   const { requests } = useLoaderData<typeof layoutLoader>()
+  const fetcher = useFetcher()
 
   return (
     <div className='border-r p-2'>
       <div className='flex items-center gap-2'>
         <Input type='text' placeholder='Filter' />
-        <Button asChild>
-          <div className='flex items-center gap-2'>
-            <PlusCircle className='h-4 w-4' />
-            <span>New</span>
-          </div>
-        </Button>
+        <fetcher.Form method='POST' action='/api/requests/create'>
+          <Button type='submit' name='newRequest' value='http://localhost:3000'>
+            <div className='flex items-center gap-2'>
+              <PlusCircle className='h-4 w-4' />
+              <span>New</span>
+            </div>
+          </Button>
+        </fetcher.Form>
       </div>
       <nav className='grid grid-cols-1 place-items-start'>
         {requests.map((request) => {
